@@ -7,73 +7,31 @@ def is_leap(year):
 
 # String = BANANA
 def minion_game(string):
-    str_to_upper = string.upper()
     vowels = ('A', 'E', 'I', 'O', 'U')
 
-    players = {
-        "Stuart": {
-            "vowels": False,
-            "score": 0
-        },
+    kevin_score, stuart_score = 0, 0
 
-        "Kevin": {
-            "vowels": True,
-            "score": 0
-        }
-    }
+    index = 0
 
-    for player in ['Stuart', 'Kevin']:
+    while index < string.__len__():
 
-        vowel_condition = players[player]['vowels']
+        current_char = string[index]
 
-        possible_substrings = {
+        if current_char in vowels:
+            kevin_score += string.__len__() - index
+        else:
+            stuart_score += string.__len__() - index
 
-        }
+        index += 1
 
-        index = 0
-
-        while index < str_to_upper.__len__():
-
-            current_char = str_to_upper[index]
-
-            if (current_char in vowels) == vowel_condition:
-
-                index_substring = index
-
-                while index_substring < str_to_upper.__len__():
-
-                    substring = str_to_upper[index: index_substring + 1]
-
-                    # Just for visualisation which substring were repeated how many times
-                    # This will decrease time complexity. just delete it if don't needed.
-
-                    if possible_substrings.get(substring):
-                        possible_substrings.update({
-                            substring: possible_substrings.get(substring) + 1
-                        })
-
-                    else:
-                        possible_substrings.update({
-                            substring: 1
-                        })
-
-                    index_substring += 1
-                    players[player]['score'] += 1
-
-            index += 1
-        # pp(possible_substrings)
-        print("|_________________________________________________________|")
-
-    # pp(players)
-
-    results = list(i['score'] for i in players.values())
-
-    if results[0] is results[1]:
+    if stuart_score == kevin_score:
         return "Draw"
 
-    winner = max(players, key=lambda user: players[user]['score'])
+    elif stuart_score > kevin_score:
+        return f"Stuart {stuart_score}"
 
-    return f"{winner} {players.get(winner)['score']}"
+    else:
+        return f"Kevin {kevin_score}"
 
 
 if __name__ == '__main__':
