@@ -34,18 +34,23 @@ class LinkedList:
         if index > self.length:
             self.append(value)
 
+        previous_node = self.traverse_to_previous_node(index)
+
+        new_node = {
+            "value": value,
+            "next": previous_node['next']
+        }
+
+        previous_node['next'] = new_node
+
+    def traverse_to_previous_node(self, index):
+
         current_node = self.head
         current_index = 0
 
         while current_node['next']:
             if index - 1 == current_index:
-                new_node = {
-                    'value': value,
-                    'next': current_node['next']
-                }
-
-                current_node['next'] = new_node
-                self.length += 1
+                return current_node
 
             current_node = current_node['next']
             current_index += 1
@@ -54,18 +59,11 @@ class LinkedList:
         if index >= self.length:
             raise IndexError("Index Out Of Range")
 
-        current_node = self.head
-        current_index = 0
-        while current_node['next']:
-            if index - 1 == current_index:
-                node_to_be_deleted = current_node['next']
-                current_node['next'] = node_to_be_deleted['next']
-                self.length += 1
+        previous_node = self.traverse_to_previous_node(index)
+        node_to_be_deleted = previous_node['next']
+        previous_node['next'] = node_to_be_deleted['next']
 
-                return self
-
-            current_node = current_node['next']
-            current_index += 1
+        return self
 
     def __repr__(self):
         return f"{self.head}"
