@@ -20,11 +20,13 @@ class Stack:
         )
 
         self.top = new_node
+        self.length += 1
 
         return new_node
 
     def pop(self):
         self.top = self.top.downside
+        self.length -= 1
 
         return self
 
