@@ -1,6 +1,5 @@
 # Algorithms and Data structures
 
-# How To Deploy
 
 ```
     The project just have a demonstrational nature, 
