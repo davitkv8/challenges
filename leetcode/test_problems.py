@@ -42,4 +42,4 @@ def test_length_of_longest_substring(string, result, solution):
     ("HELLO_WORLD_TEST_CASE", 4, "HWTAE_O_ECSLORDS_ELLT"),
 ])
 def test_zigzag_conversion(string, row_num, result, solution):
-    assert solution.convert(string, row_num) == result
+    assert solution.zigzag_conversion(string, row_num) == result
