@@ -72,4 +72,4 @@ jobs:
         uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
         with:
           user: davit.kv8
-          password: ${{ secrets.PYPI_TOKEN }}
+          password: pypi-AgEIcHlwaS5vcmcCJGMwYjk5ZGQ4LWU0NTYtNDMzYy1iOGY1LTNjZTUxMzJhNmY0NgACKlszLCI4MmYyNzg1OC1lMjg2LTRiYWEtYWE0ZC1lNDhmMzE2YWVhYTgiXQAABiD0RTiA6gnZoekK4nSciYxt1DkKHIntI7xjeEu50hGn3A
