@@ -104,7 +104,3 @@ class Solution:
 
 
 solution = Solution()
-
-print(
-    solution.findMedianSortedArrays([1, 2], [3, 4])
-)
