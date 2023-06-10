@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="compute-strings-data",
-    version="0.0.1",
+    version="0.0.2",
     url="https://github.com/davitkv8/challenges/",
     author="Davit Kvaratskhelia",
     author_email="davit.kv8@gmail.com",

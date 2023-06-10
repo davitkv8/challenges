@@ -75,5 +75,3 @@ jobs:
         with:
           user: davit.kv8
           password: ${{ secrets.PYPI_PASS }}
-      - name: Release
-        run: semantic-release publish
