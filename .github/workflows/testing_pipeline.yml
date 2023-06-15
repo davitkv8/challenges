@@ -71,6 +71,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install wheel
           pip install -r requirements.txt
+          bump2version patch
           
       - name: Build and Publish
         env:
@@ -78,5 +79,4 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
         run: |
           python setup.py sdist bdist_wheel
-          bump2version patch
           twine upload dist/*
