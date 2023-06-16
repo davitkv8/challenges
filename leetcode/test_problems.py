@@ -54,7 +54,7 @@ def test_zigzag_conversion(string, row_num, result, solution):
     ([44, 55, 56, 90, 91, 93, 1005, 1006, 1332, 1543], [5, 23, 31, 1100, 1900], 91),
 ])
 def test_find_median_sorted_arrays(l1, l2, result, solution):
-    assert solution.findMedianSortedArrays(l1, l2) == result
+    assert solution.find_median_sorted_arrays(l1, l2) == result
 
 
 @pytest.mark.leetcode
