@@ -8,13 +8,17 @@ class Node:
 
 
 class LinkedList:
-    def __init__(self, value):
-        self.head = Node(value)
+    def __init__(self, value=None):
+        self.head = Node(value) if value else None
 
         self.tail = self.head
         self.length = 1
 
     def append(self, value):
+
+        if not self.head:
+            self.__init__(value)
+
         new_node = Node(value)
 
         self.tail.next = new_node
@@ -75,23 +79,3 @@ class LinkedList:
 
     def __repr__(self):
         return f"{self.head}"
-
-
-myLinkedList = LinkedList(10)
-myLinkedList.append(20)
-myLinkedList.append(30)
-myLinkedList.prepend(5)
-myLinkedList.remove(2)
-myLinkedList.insert(2, 15)
-myLinkedList.append(30)
-myLinkedList.remove(0)
-myLinkedList.remove(0)
-myLinkedList.insert(0, 1)
-myLinkedList.insert(100, 100)
-myLinkedList.prepend(5)
-myLinkedList.insert(1, 11)
-myLinkedList.insert(20, 80)
-myLinkedList.insert(0, 3)
-myLinkedList.remove(1)
-
-print(myLinkedList)

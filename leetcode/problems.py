@@ -1,4 +1,5 @@
-# romanToInt
+from double_linked_list import DoubleLinkedList
+
 
 class Solution:
 
@@ -101,6 +102,17 @@ class Solution:
                 r = i - 1
             else:
                 l = i + 1
+
+    def reverse_nodes_in_k_group(self, values_list, k):
+
+        my_linked_list = DoubleLinkedList()
+
+        for value in values_list:
+            my_linked_list.append(value)
+
+        my_linked_list.reverse_nodes_in_k_group(k)
+
+        return my_linked_list.convert_to_list()
 
 
 solution = Solution()

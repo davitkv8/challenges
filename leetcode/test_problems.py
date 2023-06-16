@@ -55,3 +55,26 @@ def test_zigzag_conversion(string, row_num, result, solution):
 ])
 def test_find_median_sorted_arrays(l1, l2, result, solution):
     assert solution.findMedianSortedArrays(l1, l2) == result
+
+
+@pytest.mark.leetcode
+@pytest.mark.hard
+@pytest.mark.parametrize("l1, k, result", [
+    ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 5, [5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 11]),
+    ([1, 2, 3, 4, 5], 2, [2, 1, 4, 3, 5]),
+    ([1, 2, 3, 4, 5], 3, [3, 2, 1, 4, 5]),
+    ([1, 2, 3, 4, 5], 4, [4, 3, 2, 1, 5]),
+    ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3, [3, 2, 1, 6, 5, 4, 9, 8, 7, 10]),
+    ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 4, [4, 3, 2, 1, 8, 7, 6, 5, 12, 11, 10, 9]),
+    ([1, 2, 3, 4, 5, 6], 1, [1, 2, 3, 4, 5, 6]),
+    ([1, 2, 3, 4, 5, 6, 7, 8, 9], 2, [2, 1, 4, 3, 6, 5, 8, 7, 9]),
+    ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 4, [4, 3, 2, 1, 8, 7, 6, 5, 12, 11, 10, 9, 13, 14, 15]),
+    ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], 5, [5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 11, 12, 13]),
+    ([1, 2], 1, [1, 2]),
+    ([1, 2], 2, [2, 1]),
+    ([1], 1, [1]),
+    ([1], 2, [1]),
+
+])
+def test_reverse_nodes_in_k_group(l1, k, result, solution):
+    assert solution.reverse_nodes_in_k_group(l1, k) == result

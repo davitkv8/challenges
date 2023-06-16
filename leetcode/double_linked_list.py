@@ -102,10 +102,11 @@ class DoubleLinkedList:
         return self
 
     def reverse_nodes_in_k_group(self, k):
+
         start_at_index = k - 1
         stop_at_index = 0
 
-        last_element_index = self.length - k
+        last_element_index = self.length - k // 2 if self.length % 2 else self.length - 1
 
         for i in range(self.length // k):
             current_node_from_right = self.traverse_to_node(start_at_index)
@@ -118,8 +119,8 @@ class DoubleLinkedList:
                 current_node_from_right = current_node_from_right.back
                 current_node_from_left = current_node_from_left.next
 
-            stop_at_index += start_at_index + 1
-            start_at_index += start_at_index + 1
+            stop_at_index = start_at_index + 1
+            start_at_index = stop_at_index + k - 1
 
             if start_at_index > last_element_index:
                 break
@@ -133,6 +134,8 @@ class DoubleLinkedList:
         while current_node.next:
             result_list.append(current_node.value)
             current_node = current_node.next
+
+        result_list.append(current_node.value)
 
         return result_list
 
